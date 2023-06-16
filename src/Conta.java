@@ -41,6 +41,11 @@ public class Conta {
         destino.depositar(valor);
     }
 
+    public String mostrarExtrato(){
+        String txt = "Cliente: "+this.titular.getNome()+"\nSaldo Atual: "+this.saldo;
+        return txt;
+    }
+
     //getters e setters
     public int getAgencia() {
         return agencia;
