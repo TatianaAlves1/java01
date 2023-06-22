@@ -1,3 +1,4 @@
+package modelos;
 public class Conta {
     protected int agencia;
     private int numero;

@@ -1,5 +1,8 @@
 import java.text.DecimalFormat;
 
+import modelos.Cliente;
+import modelos.Conta;
+
 public class Teste {
     public static void main(String[] args) {
        Cliente cli01 = new Cliente("Maria de Souza","Rua zero","maria@gmail.com");
