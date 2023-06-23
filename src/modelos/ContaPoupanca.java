@@ -1,5 +1,5 @@
 package modelos;
-import java.util.Calendar;
+import Helpers.manipularDatas;
 
 
 public class ContaPoupanca extends Conta {
@@ -29,18 +29,18 @@ public class ContaPoupanca extends Conta {
 
 
     public String mostrarRendimento(){
-        Calendar cl     = Calendar.getInstance();
-        String hj       = cl.get(Calendar.DAY_OF_MONTH)+"/"+(cl.get(Calendar.MONTH)+1)+"/"+cl.get(Calendar.YEAR);
-        int mesAtual    = cl.get(Calendar.MONTH)+1;
-        cl.add(Calendar.MONTH, 1);
-        int proxMes    = cl.get(Calendar.MONTH)+1;
-        System.out.println("Mês atual: "+ mesAtual);
+        manipularDatas md = new manipularDatas();
+        String hj     = md.dataAtual();
+        int ma        = md.mesAtual();
+        int proxMes   = md.somarMes(1);
+        System.out.println("Mês atual: "+ ma);
         System.out.println("Próximo mês: "+proxMes);
         double saldoFuturo = super.getSaldo() + (this.taxaRendimento*super.getSaldo());
         String rendimento = "Consulta em: "+hj+"\n Saldo Atual:"+super.getSaldo()+"\nSaldo futuro será: "+saldoFuturo;
         return rendimento;
     }
 
+   
 
     public static void main(String[] args) {
          ContaPoupanca cp = new ContaPoupanca();
