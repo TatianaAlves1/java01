@@ -1,6 +1,6 @@
 package modelos;
 public class Conta {
-    protected int agencia;
+    private int agencia;
     private int numero;
     private double saldo;
     private Cliente titular;
@@ -26,10 +26,12 @@ public class Conta {
     public double mostrarSaldo(){
         return this.saldo;
     }
-    public void sacar(double valor){    
+    public boolean sacar(double valor){    
         if(valor <= this.saldo){
             this.saldo -= valor;
-        }     
+            return true;
+        } 
+        return false;    
     }
     public void depositar(double valor){       
         if(valor > 0){
@@ -61,7 +63,11 @@ public class Conta {
     public Cliente getTitular() {
         return titular;
     }
-      
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
     public String toString(){
         return "Titular: "+this.titular.getNome()+" Saldo atual: "+this.saldo;
     }

@@ -1,24 +1,27 @@
 package modelos;
 public class Cliente {
     private String nome;
-    private String endereco;
+    private Endereco endereco;
     private String email;
+    private Telefone[] telefones;
 
     //definindo construtores
     public Cliente() {
     }
-
-    public Cliente(String nome, String endereco, String email) {
+    
+    public Cliente(String nome, Endereco endereco, String email) {
         this.nome = nome;
         this.endereco = endereco;
         this.email = email;
     }
+
+
     //definindo setters
     public String getNome() {
         return nome;
     }
 
-    public String getEndereco() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
@@ -30,7 +33,7 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public void setEndereco(String endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
@@ -40,6 +43,14 @@ public class Cliente {
 
     public String toString(){
         return this.nome;
+    }
+
+    public Telefone[] getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(Telefone[] telefones) {
+        this.telefones = telefones;
     }
     
     
