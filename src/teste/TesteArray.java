@@ -1,6 +1,9 @@
 package teste;
 
 import java.util.Scanner;
+import modelos.Cliente;
+import modelos.ContaCorrente;
+import modelos.Endereco;
 
 public class TesteArray {
     public static void main(String[] args) {
@@ -30,5 +33,11 @@ public class TesteArray {
         for (Double nts : notas) {
             System.out.println(nts);
         }
+
+        // Endereco end = new Endereco();
+        // Cliente cli01 = new Cliente("Cliclano de Tal", end, "cliclano@gmail.com");
+        // ContaCorrente cc01 = new ContaCorrente(222, 579878, 500, null);
+        // cc01.getAgencia();
+        // cc01.setSaldo(54);
     }
 }

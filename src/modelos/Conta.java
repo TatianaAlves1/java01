@@ -64,7 +64,7 @@ public class Conta {
         return titular;
     }
 
-    public void setSaldo(double saldo) {
+    protected void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
