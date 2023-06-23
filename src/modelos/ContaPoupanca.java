@@ -28,15 +28,14 @@ public class ContaPoupanca extends Conta {
     }
 
 
-    public String mostrarRendimento(){
+    public String mostrarRendimento(int qtd){
         manipularDatas md = new manipularDatas();
         String hj     = md.dataAtual();
         int ma        = md.mesAtual();
-        int proxMes   = md.somarMes(1);
-        System.out.println("Mês atual: "+ ma);
+        int proxMes   = md.somarMes(qtd);
         System.out.println("Próximo mês: "+proxMes);
         double saldoFuturo = super.getSaldo() + (this.taxaRendimento*super.getSaldo());
-        String rendimento = "Consulta em: "+hj+"\n Saldo Atual:"+super.getSaldo()+"\nSaldo futuro será: "+saldoFuturo;
+        String rendimento = "Mês atual: \n"+ ma+" Consulta em: "+hj+"\n Saldo Atual:"+super.getSaldo()+"\nSaldo futuro será: "+saldoFuturo;
         return rendimento;
     }
 
@@ -48,6 +47,6 @@ public class ContaPoupanca extends Conta {
         // cp.sacar(200);
         // cp.depositar(1000);
 
-        System.out.println(cp.mostrarRendimento());
+        System.out.println(cp.mostrarRendimento(1));
     }
 }
