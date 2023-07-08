@@ -1,5 +1,5 @@
 package modelos;
-public class Cliente {
+public class Cliente implements inter {
     private String nome;
     private Endereco endereco;
     private String email;
@@ -51,6 +51,15 @@ public class Cliente {
 
     public void setTelefones(Telefone[] telefones) {
         this.telefones = telefones;
+    }
+
+    @Override
+    public boolean validarCPF(String cpf) {
+        if(cpf.length()==8){
+           return true; 
+        }
+        return false;
+        
     }
     
     

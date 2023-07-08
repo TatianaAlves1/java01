@@ -1,12 +1,14 @@
 package modelos;
-public class Conta {
+public abstract class Conta {
     private int agencia;
     private int numero;
     private double saldo;
     private Cliente titular;
+    public static int qtdContas = 0;
 
     //Construtores  
     public Conta() {
+        qtdContas++;
     }
     
     public Conta(int agencia, int numero, double saldo, Cliente titular) {
@@ -14,12 +16,14 @@ public class Conta {
         this.numero = numero;
         this.saldo = saldo;
         this.titular = titular;
+        qtdContas++;
     }
 
     public Conta(int agencia, int numero, Cliente titular) {
         this.agencia = agencia;
         this.numero = numero;
         this.titular = titular;
+        qtdContas++;
     }
 
     //definindo métodos

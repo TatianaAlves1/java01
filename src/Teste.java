@@ -1,11 +1,14 @@
 import java.text.DecimalFormat;
 import modelos.Cliente;
 import modelos.Conta;
+import modelos.ContaCorrente;
+import modelos.ContaPoupanca;
 import modelos.Endereco;
 import modelos.Telefone;
 
 public class Teste {
     public static void main(String[] args) {
+       System.out.println("Quantidade de contas instanciadas: "+Conta.qtdContas);
        Endereco end01 = new Endereco();
        Endereco end02 = new Endereco();
        Telefone[] tfs = new Telefone[2];
@@ -20,15 +23,15 @@ public class Teste {
        tf2.setNumero("45789777");
        tf2.setDesc("Comercial");
        tfs[0] = tf1;
-       tfs[2] = tf2;
+       tfs[1] = tf2;
 
        Cliente cli01  = new Cliente("Maria de Souza",end01,"maria@gmail.com");
        Cliente cli02  = new Cliente("John Martinelle",end02,"johnjohn@gmail.com");
     
        cli01.setTelefones(tfs); 
 
-       Conta c1 = new Conta(2587,456789, 2000, cli01);
-       Conta c2 = new Conta(2587,457894, 1500, cli02); 
+       ContaCorrente c1 = new ContaCorrente(2587,456789, 2000, cli01);
+       ContaCorrente c2 = new ContaCorrente(2587,457894, 1500, cli02); 
         //mostrar dados da composição
        System.out.println(c1.getTitular().getNome());
        System.out.println(c1.getTitular().getEmail());
@@ -51,5 +54,7 @@ public class Teste {
        System.out.println(c2);
        System.out.println(cli01);
        System.out.println(cli02);
+       ContaPoupanca cp = new ContaPoupanca();
+       System.out.println("Quantidade de contas instanciadas: "+Conta.qtdContas);
     }
 }
